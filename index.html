@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>Desktime</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Desktime Dashboard" name="description" />
+        <meta content="Desktime Dashboard" name="author" />
+        <link rel="shortcut icon" href="assets/images/favicon.svg">
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css"  rel="stylesheet" type="text/css" />
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <div class="login-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-6 col-md-5 ps-md-0">
+                        <div class="login-left-div">
+                            <img src="assets/images/logo.svg" alt="" class="logo-img">
+                            <div class="login-intro">
+                                <h5>Welcome to </h5>
+                                <h2>Veuz Desktime</h2>
+                                <p>Here, We are delighted to offer a modern and user-friendly service to ensure you have the best experience.</p>
+                                <img src="assets/images/login.webp" alt="" class="img-fluid login-img">
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-6 col-md-7">
+                        <div class="login-right-div">
+                            <div class="login-form">
+                                <h3>Sign In</h3>
+                                <p>Login to access your Desktime  account</p>
+        
+                                <form class="form-horizontal" action="home.html">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="username" placeholder="Enter Your Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="input-group auth-pass-inputgroup">
+                                                    <input type="password" class="form-control" placeholder="Enter Your Password" aria-label="Password" aria-describedby="password-addon">
+                                                    <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="row d-flex align-items-center">
+                                        <div class="col-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="remember-check">
+                                                <label class="form-check-label" for="remember-check">
+                                                    Remember me
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <a href="forgotpw.html" class="forgot-pass">Recover Password?</a>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-33">
+                                        <div class="col-md-12 text-center">
+                                            <button class="btn-1" type="submit">Sign In</button>
+                                        </div>
+                                        <div class="col-md-12 login-bottom">
+                                            <p>Don't have an account ? <a href="register.html"> Sign Up</a> </p>
+
+                                            <div class="or-signin">
+                                                <div class="hr"><span>Or Login with</span></div>
+                
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <a href="javascript::void()" class="social-list-item">
+                                                            <img src="assets/images/icons/facebook.svg" alt="">
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a href="javascript::void()" class="social-list-item">
+                                                            <img src="assets/images/icons/twitter.svg" alt="">
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a href="javascript::void()" class="social-list-item">
+                                                            <img src="assets/images/icons/google.svg" alt="">
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a href="javascript::void()" class="social-list-item">
+                                                            <img src="assets/images/icons/apple.svg" alt="">
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                   
+                                    </div>
+                                   
+                                   
+                                </form>
+                                
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+        
+            </div>
+           
+        </div>
+
+
+        <!-- JAVASCRIPT -->
+        <script src="assets/libs/jquery/jquery.min.js"></script>
+        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="assets/libs/node-waves/waves.min.js"></script>
+        
+        <!-- App js -->
+        <script src="assets/js/app.js"></script>
+        <script>
+            $(function () {
+                setTimeout(function () {
+                    $("#loading").hide();
+                }, 500)
+
+            })
+        </script>
+    </body>
+</html>

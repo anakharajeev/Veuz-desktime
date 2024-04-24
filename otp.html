@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>Desktime</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Desktime Dashboard" name="description" />
+        <meta content="Desktime Dashboard" name="author" />
+        <link rel="shortcut icon" href="assets/images/favicon.svg">
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css"  rel="stylesheet" type="text/css" />
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <div class="login-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-6 col-md-5 ps-md-0">
+                        <div class="login-left-div">
+                            <img src="assets/images/logo.svg" alt="" class="logo-img">
+                            <div class="login-intro">
+                                <h5>Welcome to </h5>
+                                <h2>Veuz Desktime</h2>
+                                <p>Here, We are delighted to offer a modern and user-friendly service to ensure you have the best experience.</p>
+                                <img src="assets/images/login.webp" alt="" class="img-fluid login-img">
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-6 col-md-7">
+                        <div class="login-right-div">
+                            <h6 class="backtologin"><a href="index.html"><i class="bx bx-chevron-left"></i>Back to login</a></h6>
+                            <div class="login-form">
+                                <h3>OTP Verification</h3>
+                                <p>Please enter the OTP to verify your email.</p>
+        
+                                <form class="form-horizontal" action="resetpw.html">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="d-flex otp-input justify-content-between">
+                                                    <input id="otp-first" class="form-control" type="number" min="0" max="9" step="1" aria-label="first digit" />
+                                                    <input id="otp-second" class="form-control" type="number" min="0" max="9" step="1" aria-label="second digit" />
+                                                    <input id="otp-third" class="form-control" type="number" min="0" max="9" step="1" aria-label="third digit" />
+                                                    <input id="otp-fourth" class="form-control" type="number" min="0" max="9" step="1" aria-label="fourth digit" />
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    Please Enter OTP
+                                                </div>
+                                            </div>
+                                        </div>
+                                       <div class="col-md-12">
+                                        <h4 id="counter"></h4>
+                                       </div>
+                                       
+                                    </div>
+                                   
+                                    <div class="row mt-33">
+                                        <div class="col-md-12 text-center">
+                                            <button class="btn-1" type="submit">Verify</button>
+                                        </div>
+                                     
+                                        <div class="col-md-12 login-bottom">
+                                           
+                                            <p>Don't receive the OTP ? <a href="#"> Resend</a> </p>
+                                            <div class="or-signin">
+                                                <div class="hr"><span>Or Login with</span></div>
+                
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <a href="javascript::void()" class="social-list-item">
+                                                            <img src="assets/images/icons/facebook.svg" alt="">
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a href="javascript::void()" class="social-list-item">
+                                                            <img src="assets/images/icons/twitter.svg" alt="">
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a href="javascript::void()" class="social-list-item">
+                                                            <img src="assets/images/icons/google.svg" alt="">
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a href="javascript::void()" class="social-list-item">
+                                                            <img src="assets/images/icons/apple.svg" alt="">
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                   
+                                    </div>
+                                   
+                                   
+                                </form>
+                                
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+        
+            </div>
+           
+        </div>
+
+
+        <!-- JAVASCRIPT -->
+        <script src="assets/libs/jquery/jquery.min.js"></script>
+        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="assets/libs/node-waves/waves.min.js"></script>
+        
+        <!-- App js -->
+        <script src="assets/js/app.js"></script>
+        <script>
+            $(function () {
+                setTimeout(function () {
+                    $("#loading").hide();
+                }, 500)
+
+            })
+        </script>
+            <!-- otp script -->
+    <script>
+        console.clear();
+        let inputs = document.querySelectorAll("input");
+        let values = Array(4);
+        let clipData;
+        inputs[0].focus();
+
+        inputs.forEach((tag, index) => {
+            tag.addEventListener('keyup', (event) => {
+                if (event.code === "Backspace" && hasNoValue(index)) {
+                    if (index > 0) inputs[index - 1].focus();
+                }
+
+                //else if any input move focus to next or out
+                else if (tag.value !== "") {
+                    (index < inputs.length - 1) ? inputs[index + 1].focus(): tag.blur();
+                }
+
+                //add val to array to track prev vals
+                values[index] = event.target.value;
+            });
+
+            tag.addEventListener('input', () => {
+                //replace digit if already exists
+                if (tag.value > 10) {
+                    tag.value = tag.value % 10;
+                }
+            });
+
+            tag.addEventListener('paste', (event) => {
+                event.preventDefault();
+                clipData = event.clipboardData.getData("text/plain").split('');
+                filldata(index);
+            })
+        })
+
+        function filldata(index) {
+            for (let i = index; i < inputs.length; i++) {
+                inputs[i].value = clipData.shift();
+            }
+        }
+
+        function hasNoValue(index) {
+            if (values[index] || values[index] === 0)
+                return false;
+
+            return true;
+        }
+    </script>
+    <script>
+        function countdown() {
+        var seconds = 59;
+        function tick() {
+          var counter = document.getElementById("counter");
+          seconds--;
+          counter.innerHTML =
+            "0:" + (seconds < 10 ? "0" : "") + String(seconds);
+          if (seconds > 0) {
+            setTimeout(tick, 1000);
+          }
+        }
+        tick();
+      }
+      countdown();
+    </script>
+    </body>
+</html>
